@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Air Quality Index Prediction</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+border-box: box-sizing;
+}
+    body{
+    font-family: 'Poppins', sans-serif;
+    }
+
+    .main-container {
+    height: 100vh;
+    }
+
+    .form{
+    min-width : 600px;
+    }
+
+    .form-control{
+    width : 100%
+    }
+</style>
+<body>
+<div class="main-container d-flex align-items-center" >
+    <div class="container px-5" style="background-color: #ffc49a; border-radius: 15px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+        <h1 class="text-center py-5">Air Qualiy Index Prediction</h1>
+        <div class="d-flex justify-content-center">
+            <div class="form">
+                <form action="/predict">
+                   <div class="row">
+                       <div class="col-lg-2 col-md-3 col-sm-12">
+                           <label>PM2.5</label>
+                       </div>
+                       <div class="col-lg-1">:</div>
+                        <div class="col-lg-9 col-md-9 col-sm-12">
+                            <input name="pm2.5" type="text" class="form-control" placeholder="eg. 9.5"/>
+                        </div>
+                   </div>
+                    <div class="row mt-3">
+                       <div class="col-lg-2 col-md-3 col-sm-12">
+                           <label>PM10</label>
+                       </div>
+                        <div class="col-lg-1 ">:</div>
+                        <div class="col-lg-9 col-md-9 col-sm-12">
+                            <input name="pm10" type="text" class="form-control" placeholder="eg. 8.5"/>
+                        </div>
+                   </div>
+                    <div class="row mt-3">
+                       <div class="col-lg-2 col-md-3 col-sm-12">
+                           <label>NO</label>
+                       </div>
+                        <div class="col-lg-1 ">:</div>
+                        <div class="col-lg-9 col-md-9 col-sm-12">
+                            <input name="no" type="text" class="form-control" placeholder="eg. 9.5"/>
+                        </div>
+                   </div>
+                    <div class="row mt-3">
+                       <div class="col-lg-2 col-md-3 col-sm-12">
+                           <label>NO2</label>
+                       </div>
+                        <div class="col-lg-1 ">:</div>
+                        <div class="col-lg-9 col-md-9 col-sm-12">
+                            <input name="no2" type="text" class="form-control" placeholder="eg. 8.5"/>
+                        </div>
+                   </div>
+                    <div class="row mt-3">
+                       <div class="col-lg-2 col-md-3 col-sm-12">
+                           <label>CO</label>
+                       </div>
+                        <div class="col-lg-1 ">:</div>
+                        <div class="col-lg-9 col-md-9 col-sm-12">
+                            <input name="co" type="text" class="form-control" placeholder="eg. 8.5"/>
+                        </div>
+                   </div>
+                    <div class="row mt-3">
+                       <div class="col-lg-2 col-md-3 col-sm-12">
+                           <label>SO2</label>
+                       </div>
+                        <div class="col-lg-1 ">:</div>
+                        <div class="col-lg-9 col-md-9 col-sm-12">
+                            <input name="so2" type="text" class="form-control" placeholder="eg. 9.5"/>
+                        </div>
+                   </div>
+                    <div class="row mt-3">
+                       <div class="col-lg-2 col-md-3 col-sm-12">
+                           <label>O3</label>
+                       </div>
+                        <div class="col-lg-1 ">:</div>
+                        <div class="col-lg-9 col-md-9 col-sm-12">
+                            <input name="o3" type="text" class="form-control" placeholder="eg. 8.5"/>
+                        </div>
+                   </div>
+                    <div class="my-5 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary">Predict</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

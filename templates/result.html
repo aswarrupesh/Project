@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+           @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+border-box: box-sizing;
+}
+    body{
+    font-family: 'Poppins', sans-serif;
+    }
+    </style>
+</head>
+<body onload="Quality()">
+
+<div class="container py-5">
+        <h1 style="text-align:center; font-family: 'Roboto', sans-serif;">Predicted Air Quality Index = {{predictions}}</h1>
+<div class="py-5">
+    <h1 class="text-center" id="resultContainer">
+    </h1>
+    <div class="d-flex mt-5">
+    <h4>Possible Health Impacts : &nbsp;&nbsp;</h4>
+    <h4 id="healthImpacts">
+    </h4>
+    </div>
+    <script>
+        function Quality(){
+            const pre = {{predictions}}
+            console.log("predicted value", pre);
+            var health= document.getElementById('healthImpacts');
+            if(pre>0 && pre<=50){
+                const resultData = document.getElementById('resultContainer');
+                resultData.innerHTML="Good";
+                resultData.style.color="#00B050";
+                health.innerHTML = "Minimal impact"
+            }else if(pre>50 && pre<=100){
+                const satresultData = document.getElementById('resultContainer');
+                satresultData.innerHTML="Satisfactory";
+                satresultData.style.color="#92D050";
+                  health.innerHTML = "Minor breathing discomfort to sensitive people"
+            }else if(pre>100 && pre<=200){
+                const mdresultData = document.getElementById('resultContainer');
+                mdresultData.innerHTML="Moderate";
+                mdresultData.style.color="#FFFF00";
+                  health.innerHTML = "Breathing discomfort to the people with lungs, asthma and heart diseases"
+            }else if(pre>200 && pre<=300){
+                const poorresultData = document.getElementById('resultContainer');
+                poorresultData.innerHTML="Poor";
+                poorresultData.style.color="#FF9900";
+                  health.innerHTML = "Breathing discomfort to most people on prolonged exposure"
+            }else if(pre>300 && pre<=400){
+                const vgresultData = document.getElementById('resultContainer');
+                vgresultData.innerHTML="Very Poor";
+                vgresultData.style.color="#FF0000";
+                  health.innerHTML = "Respiratory illness on prolonged exposure";
+            }else if(pre>400 && pre<=500){
+                const sevResultData = document.getElementById('resultContainer');
+                sevResultData.innerHTML="Severe";
+                sevResultData.style.color="#C00000";
+                  health.innerHTML = "Affects healthy people and seriously impacts those with existing diseases"
+            }else{
+                console.log("sorry");
+            }
+        }
+    </script>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
